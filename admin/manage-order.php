@@ -2,13 +2,13 @@
 
 <div class="main-content">
    <div class="wrapper">
-   <h1>Manage Food</h1>
+   <h1>Manage Order</h1>
 
    <br><br>
 
         <!-- Button to add admin -->
 
-        <a href = "#" class="btn-primary">Add Foods</a>
+        <a href = "#" class="btn-primary">Add Order</a>
 
       <table class="tbl-full">
         <tr>
