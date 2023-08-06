@@ -129,3 +129,14 @@ table tr td{
     color: white ;
 }
 
+/*login*/
+.login {
+    width: 30%;
+    border: solid rgb(13, 14, 13);
+    text-align:justify;
+    margin: 5% auto;
+    padding: 2%;
+
+}
+
+
