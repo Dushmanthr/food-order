@@ -3,7 +3,10 @@
     Theme: Restaurant Food Order;
     version: 1.0;
 */
-
+body{
+    background-image: linear-gradient(YELLOW,aqua);
+    height: 500px;
+}
 /* CSS for All */
 *{
     margin: 0 0;
@@ -41,11 +44,11 @@
 }
 
 a{
-    color: #ff6b81;
+    color: #110103;
     text-decoration: none;
 }
 a:hover{
-    color: #ff4757;
+    color: orangered;
 }
 
 .btn{
@@ -55,13 +58,14 @@ a:hover{
     border-radius: 5px;
 }
 .btn-primary{
-    background-color: #ff6b81;
+    background-color: #000000;
     color: white;
     cursor: pointer;
 }
+
 .btn-primary:hover{
     color: white;
-    background-color: #ff4757;
+    background-color: red;
 }
 h2{
     color: #2f3542;
@@ -110,7 +114,7 @@ fieldset{
 /* CSS for Food SEarch Section */
 
 .food-search{
-    background-image: url(../images/bg.jpg);
+    background-image: url(../images/bg1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -140,7 +144,7 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: #ececec;
+    background-color: greenyellow;
     padding: 4% 0;
 }
 .food-menu-box{
