@@ -17,6 +17,12 @@
                 echo $_SESSION['login'];
                 unset($_SESSION['login']);
             }
+
+            if(isset($_SESSION['no-login-message']))
+            {
+                echo $_SESSION['no-login-message'];
+                unset($_SESSION['no-login-message']); 
+            }
         ?>
         <br><br>
     <!-- login start from here -->
@@ -69,6 +75,7 @@
          if ($count == 1) {
             // User available and successful login
             $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
+            $_SESSION['user'] = $username; // to check user log in or not and log will unset it
             // Redirect to home page
             header('Location: ' . SITEURL . 'admin/');
         } else {
@@ -81,7 +88,7 @@
         // Close the database connection
         mysqli_close($conn);
 
-        echo("hello world");
+        
          
 
     }
