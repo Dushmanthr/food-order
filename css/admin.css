@@ -67,6 +67,14 @@ table tr td{
     font-weight: bold;
 }
 
+.success{
+    color:#2ed573;
+}
+
+.error{
+    color: #ff4757;
+}
+
 .btn-secondary:hover{
     background-color: #2ed573;
 }
@@ -127,6 +135,11 @@ table tr td{
 .footer{
     background-color: #ff4757;
     color: white ;
+    /* position: absolute;
+    bottom: 0;
+    right:0;
+    left: 0; */
+
 }
 
 /*login*/

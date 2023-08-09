@@ -6,6 +6,13 @@
 
         <br/><br/>
 
+        <?php
+             if(isset($_SESSION['add'])){
+               echo $_SESSION['add']; //displaying session message
+               unset($_SESSION['add']); //removing session msg
+             }
+        ?>
+ 
 
         <form action = "" method = "POST">
             <table class="tbl-30">
@@ -71,14 +78,17 @@
           //data inserted
           //echo 'inserted';
           //create session variable to display message
-          $_SESSION['add'] = "Admin Added successfully";
+         $_SESSION['add'] = "<div class = 'success'>Admin Added successfully.</div>";
           //redirect page to manage admin
-          header("location: . SITEURL . 'admin/manage-admin.php'");
+          header("location:" . SITEURL . "admin/manage-admin.php ");
       }
       else{
           //failed to insert
-
-          echo 'fail to insert';
+            //echo 'failed to insert';
+           //create session variable to display message
+           $_SESSION['add'] = "<div class = 'error'>Failed to add admin.</div>";
+           //redirect page to manage admin
+           header("location:" . SITEURL . "admin/add-admin.php");
       }
 
 
