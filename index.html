@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <!-- Important to make website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YumYumEats</title>
+    <title>YumEats</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
 
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <!-- Link our CSS file -->
@@ -12,12 +15,15 @@
 </head>
 
 <body>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   
+<br><br>
     <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="container">
+    <section class="navbar ">
+        <div class="containernavbar">
             <div class="logo">
                 <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                    <img src="images/logo.png" alt="Restaurant Logo"  height=40 class="img-responsive">
                 </a>
             </div>
 
@@ -45,14 +51,43 @@
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
-        <div class="container">
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../images/bg1.png" class="d-block" alt="...">
+
+    </div>
+    <div class="carousel-item">
+      <img src="../images/bg2.jpg" class="d-block" alt="...">
+
+       
+    </div>
+    <div class="carousel-item">
+
+      <img src="../images/bg3.jpg" class="d-block" alt="...">
+   </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+          <div class="containersearch">
             
-            <form action="food-search.html" method="POST">
+<form action="food-search.html" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
+                  </div>
+</div>
 
-        </div>
+
+  
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
