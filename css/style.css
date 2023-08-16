@@ -1,6 +1,6 @@
 
 body{
-    background-image: linear-gradient(rgb(255, 174, 0),aqua);
+    background-image: linear-gradient(yellow,orangered);
     height: 500px;
 }
 
@@ -72,6 +72,9 @@ h2{
 h3{
     font-size: 1.5rem;
 }
+h4{
+    color: white;
+}
 .float-container{
     position: relative;
 }
@@ -91,13 +94,15 @@ fieldset{
 /* CSSS for navbar section */
 
 .containernavbar{overflow: hidden;
-        background-color: orange;
-        position: fixed;
-        top: 0;
-        width: 100%;
-     height : 10%;
-    margin: 0 auto;
-    padding: 1%;
+  overflow: hidden;
+  background-color: orange;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10%;
+  margin: 0 auto;
+  padding: 1%;
+  z-index: 999;
 }
 
 .logo{
@@ -120,27 +125,38 @@ fieldset{
 /* CSS for Food SEarch Section */
 
 .containerbar{
-    width: 80%;
-    margin: 0 auto;
-    padding: 1%;
-display: flex;
+   width: 80%;
+  margin: 0 auto;
+  padding: 1%;
+  display: flex;
 
 }
-
-
-.containersearch{overflow: hidden;
- 
-       
-        width: 100%;
-    margin: 0 auto;
-
+.carousel {
+  position: relative;
 }
+
+.carousel .carousel-inner .carousel-item img {
+  width: auto;
+  height: 100vh;
+}
+
+.containersearch{
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  bottom: 50%;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+
 .food-search{
-    background-image: url(../images/bg1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 7% 0;
+  position: relative;
+  background-image: url(../images/bg1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 30vh;
 }
 
 .food-search input[type="search"]{
@@ -166,7 +182,7 @@ display: flex;
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: greenyellow;
+    background-color: orange;
     padding: 4% 0;
 }
 .food-menu-box{
@@ -174,7 +190,7 @@ display: flex;
     margin: 1%;
     padding: 2%;
     float: left;
-    background-color: white;
+    background-color: black;
     border-radius: 15px;
 }
 
@@ -192,6 +208,7 @@ display: flex;
 .food-price{
     font-size: 1.2rem;
     margin: 2% 0;
+   color: white;
 }
 .food-detail{
     font-size: 1rem;
