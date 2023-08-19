@@ -101,6 +101,12 @@
                        //to upload image we need image name,source path and destination path
                        $image_name = $_FILES['image']['name'];
 
+                       //upload the image only if image is selected
+                       if($image_name != "")
+                       {
+
+                      
+
                        //Auto rename our image
                        //Get the extension of our image (.jpg,png,gif etc)eg: food1.jpg
                         $ext = end(explode('.', $image_name));
@@ -130,6 +136,7 @@
                            die();
                        
                         }
+                    }
                     }
                    else{
                        //Don't upload image and setthe image_name value as blank
