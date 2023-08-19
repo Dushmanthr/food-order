@@ -14,7 +14,7 @@
             }
         ?>
 
-        <form action="" method="POST" encrtype="multipart/form-data"> 
+        <form action="" method="POST" enctype="multipart/form-data"> 
 
             <table class="tbl-30">
 
@@ -186,7 +186,7 @@
                             //Failed to upload the image
                             //Redirect to add food page with error message
                             $_SESSION['upload'] = "<div class='error>Failed to upload image.</div";
-                            header('location:' .SITEURL.'admin/add-foof.php');
+                            header('location:' .SITEURL.'admin/add-food.php');
                             //Stop the process
                             die();
                         }
@@ -219,13 +219,13 @@
                 if($res2 == true)
                 {
                     //Data inserted successfully
-                    $_SESSION['add'] = "div class = 'success'>Food added successfully.</div>";
+                    $_SESSION['add'] = "<div class='success'>Food added successfully.</div>";
                     header('location:'.SITEURL.'admin/manage-food.php');
                 }
                 else
                 {
                     //Failed to insert data
-                    $_SESSION['add'] = "div class = 'error'>Failed to add food.</div>";
+                    $_SESSION['add'] = "<div class = 'error'>Failed to add food.</div>";
                     header('location:'.SITEURL.'admin/manage-food.php');
                 }
                 }

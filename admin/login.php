@@ -28,7 +28,7 @@
     <!-- login start from here -->
     <form action="login.php" method="post" >
         Username: <br>
-        <input type="text" name="username" placeholder="Enter Username" <br><br>
+        <input type="text" name="username" placeholder="Enter Username"> <br><br>
         <br>
         Password: <br>
         <input type="password" name="password" placeholder="Enter your password"> <br><br>
