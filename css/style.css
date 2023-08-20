@@ -200,29 +200,76 @@ display: flex;
 
 
 /* CSS for Social */
-.social ul{
-    list-style-type: none;
-}
-.social ul li{
-    display: inline;
-    padding: 1%;
+/* Reset some default styles for the page */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
 }
 
+/* Center-align social media icons */
+.social {
+    text-align: center; /* Center-align the content */
+    padding: 20px 0;
+}
+
+.social ul {
+    list-style: none;
+    display: inline; /* Display list items inline */
+}
+
+.social li {
+    display: inline-block; /* Display list items as blocks within inline container */
+    margin: 0 15px; /* Add spacing between list items */
+}
+
+.social li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social li img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+/* Center-align footer text */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
 /* for Order Section */
-.order{
+/* Apply background color to the entire order page */
+body {
+    background-color: #89888d; /* Choose your desired background color */
+}
+
+/* Center the order container */
+.order {
     width: 50%;
     margin: 0 auto;
+    background-color: #838655; /* Add a background color to the container */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(244, 246, 247, 0.1); /* Add a subtle shadow */
 }
-.input-responsive{
-    width: 96%;
+
+/* Style the responsive input fields */
+.input-responsive {
+    width: 100%; /* Adjust the width to fill the container */
     padding: 1%;
     margin-bottom: 3%;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
 }
-.order-label{
-    margin-bottom: 1%; 
+
+/* Style the label for input fields */
+.order-label {
+    margin-bottom: 1%;
     font-weight: bold;
 }
 
