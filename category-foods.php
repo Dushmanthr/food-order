@@ -1,12 +1,60 @@
+<<<<<<< HEAD:category-foods.php
 <?php include('partials-front/menu.php');  ?>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="containernavbar">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+>>>>>>> 1a6f11417871f0e9534d2428f2626b85d21199e6:category-foods.html
 
 <br><br><br>
+<br><br>
+
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
-        <div class="container">
+        <div class="containersearch">
             
-            <h2>Foods on <a href="#" class="text-white">"Category"</a></h2>
+            <h1><a href="#" class="text-blue">- Burger -</a></h1>
 
         </div>
     </section>
@@ -53,75 +101,22 @@
                 </div>
             </div>
 
-            <div class="food-menu-box">
+             <div class="food-menu-box">
                 <div class="food-menu-img">
-                    <img src="images/pizza.jpg" alt="pizza" class="img-responsive img-curve">
+                    <img src="images/top-burgers.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
                 </div>
 
                 <div class="food-menu-desc">
-                    <h4>Italian Pizza</h4>
-                    <p class="food-price">$2.99</p>
+                    <h4>Top Burger</h4>
+                    <p class="food-price">$1.99</p>
                     <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organice vegetables.
+                        Made with tomato Sauce and organice vegetables.
                     </p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="order.html" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Hawain Pizza</h4>
-                    <p class="food-price">$2.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Kottu.jpg" alt="Chicke Hawain Kottu" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Kottu
-                    </h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/rice.jpg" alt="Chicke Hawain rice" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Rice</h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
 
             <div class="clearfix"></div>
 

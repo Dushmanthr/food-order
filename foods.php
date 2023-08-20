@@ -1,10 +1,57 @@
+<<<<<<< HEAD:foods.php
 <?php include('partials-front/menu.php');  ?>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Website</title>
+
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar">
+        <div class="containernavbar">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
+>>>>>>> 1a6f11417871f0e9534d2428f2626b85d21199e6:foods.html
 
 <br><br><br>
+<br><br>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
-        <div class="container">
+        <div class="containersearch">
             
             <form action="food-search.html" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>

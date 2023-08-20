@@ -1,4 +1,52 @@
-<?php include('partials-front/menu.php');  ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Important to make website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumEats</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link our CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<br><br>
+    <!-- Navbar Section Starts Here -->
+    <section class="navbar ">
+        <div class="containernavbar">
+            <div class="logo">
+                <a href="#" title="Logo">
+                    <img src="images/logo.png" alt="Restaurant Logo"  height=40 class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categories.html">Categories</a>
+                    </li>
+                    <li>
+                        <a href="foods.html">Foods</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Navbar Section Ends Here -->
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -45,73 +93,29 @@
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
 
-            <?php 
-            //create sql query to display categories from database
-            $sql= "SELECT * from tbl_category where active='yes' AND featured='yes' LIMIT 3";
-            //execute query
-            $res = mysqli_query($conn, $sql);
-            //count rows to check whether category is available
-            $count = mysqli_num_rows($res);
+            <a href="category-foods.html">
+            <div class="box-3 float-container">
+                <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
 
-            if($count>0)
-            {
-                //category available
-                while($row = mysqli_fetch_assoc($res))
-                {
-                    //need to get id,title,image_name
-                    $id= $row['id'];
-                    $title= $row['title'];
-                    $image_name= $row['image_name'];
-                    ?>
-                        <a href="category-foods.html">
-                        <div class="box-3 float-container">
-                            <?php 
-                                if($image_name=="")
-                                {
-                                    //display
-                                    echo "<div class= 'error'>image not available</div>";
-                                }
-                                else{
-                                    //image available
-                                    ?>
-                                     <img src="<?php echo SITEURL;?>images/<?php echo $image_name; ?>" alt="Burger" class="img-responsive img-curve">
-                                    <?php
+                <h3 class="float-text text-white">Burger</h3>
+            </div>
+            </a>
 
-                                }
-                            ?>
+            <a href="#">
+            <div class="box-3 float-container">
+                <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
 
+                <h3 class="float-text text-white">Pizza</h3>
+            </div>
+            </a>
 
-                           
+            <a href="#">
+            <div class="box-3 float-container">
+                <img src="images/Kottu.jpg" alt="Kottu" class="img-responsive img-curve">
 
-                            <h3 class="float-text text-white"><?php echo $title; ?></h3>
-                        </div>
-                        </a>
-
-                        <a href="#">
-                        <div class="box-3 float-container">
-                            <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
-
-                            <h3 class="float-text text-white">Pizza</h3>
-                        </div>
-                        </a>
-
-                        <a href="#">
-                        <div class="box-3 float-container">
-                            <img src="images/Kottu.jpg" alt="Kottu" class="img-responsive img-curve">
-
-                            <h3 class="float-text text-white">Kottu</h3>
-                        </div>
-                        </a>
-
-                    <?php
-                }
-            }
-            else{
-                //not available
-                echo "<div class='error' >Category not added</div>";
-            }
-            
-            ?>
+                <h3 class="float-text text-white">Kottu</h3>
+            </div>
+            </a>
 
             <div class="clearfix"></div>
         </div>
@@ -239,4 +243,31 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <?php include('partials-front/footer.php');  ?>
+    <!-- social Section Starts Here -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/>https://www.facebook.com/YumYumEats/</a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/> https://www.instagram.com/YumYumEats/ </a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/>https://twitter.com/YumYumEats/</a>
+                </li>
+            </ul>
+        </div>
+    </section
+    <!-- social Section Ends Here -->
+
+    <!-- footer Section Starts Here -->
+    <section class="footer ">
+        <div class="container text-center">
+            <p>All rights reserved.</p>
+        </div>
+    </section>
+    <!-- footer Section Ends Here -->
+
+</body>
+</html>
