@@ -64,6 +64,12 @@ a:hover{
     color: white;
     background-color: red;
 }
+h1{
+   color: black;
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+
 h2{
     color: #2f3542;
     font-size: 2rem;
@@ -152,11 +158,11 @@ fieldset{
 
 .food-search{
   position: relative;
-  background-image: url(../images/bg1.png);
+  background-image: url(../images/bg3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 30vh;
+  min-height: 50vh;
 }
 
 .food-search input[type="search"]{
