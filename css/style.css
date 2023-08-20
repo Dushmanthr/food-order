@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* 
     Author: Vijay Thapa;
     Theme: Restaurant Food Order;
@@ -9,18 +9,18 @@ body{
 
     height: 500px;
 }
-=======
+
 
 body{
-<<<<<<< Updated upstream
+
     background-image: linear-gradient(rgb(255, 174, 0),aqua);
-=======
+
     background-image: linear-gradient(orange,orangered);
->>>>>>> Stashed changes
+
     height: 500px;
 }
 
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
 /* CSS for All */
 *{
     margin: 0 0;
@@ -81,15 +81,12 @@ a:hover{
     color: white;
     background-color: red;
 }
-<<<<<<< HEAD
-=======
 h1{
    color: black;
     font-size: 2rem;
     margin-bottom: 2%;
 }
 
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
 h2{
     color: #2f3542;
     font-size: 2rem;
@@ -98,12 +95,6 @@ h2{
 h3{
     font-size: 1.5rem;
 }
-<<<<<<< HEAD
-h4{
-    color: white;
-}
-=======
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
 .float-container{
     position: relative;
 }
@@ -122,24 +113,6 @@ fieldset{
 
 /* CSSS for navbar section */
 
-<<<<<<< HEAD
-
-.containernavbar{overflow: hidden;
-  overflow: hidden;
-  background-color: orange;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 10%;
-  margin: 0 auto;
-  padding: 1%;
-  z-index: 999;
-}
-
-
-.logo{
-    width: 10%;
-=======
 .containernavbar{overflow: hidden;
         background-color: orange;
         position: fixed;
@@ -152,7 +125,6 @@ fieldset{
 
 .logo{
     width: 6%;
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
     float: left;
 }
 .menu{
@@ -168,7 +140,7 @@ fieldset{
     font-weight: bold;
 }
 
-<<<<<<< HEAD
+
 
 
 .containerbar{
@@ -205,7 +177,7 @@ fieldset{
   background-repeat: no-repeat;
   background-position: center;
   min-height: 30vh;
-=======
+}
 /* CSS for Food SEarch Section */
 
 .containerbar{
@@ -225,13 +197,13 @@ display: flex;
 
 }
 .food-search{
-<<<<<<< Updated upstream
+
     background-image: url(../images/bg1.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 7% 0;
-=======
+
   position: relative;
   background-image: url(../images/bg3.jpg);
   background-size: cover;
@@ -247,16 +219,15 @@ display: flex;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 50vh;
->>>>>>> Stashed changes
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
+
 }
 
 .food-search input[type="search"]{
     width: 50%;
-<<<<<<< HEAD
-=======
+
     position-top:90%;
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
     padding: 1%;
     font-size: 1rem;
     border: none;
@@ -278,11 +249,11 @@ display: flex;
 
 /* CSS for Food Menu */
 .food-menu{
-<<<<<<< HEAD
+
     background-color: orange;
-=======
+
     background-color: greenyellow;
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
     padding: 4% 0;
 }
 .food-menu-box{
@@ -290,11 +261,11 @@ display: flex;
     margin: 1%;
     padding: 2%;
     float: left;
-<<<<<<< HEAD
+
     background-color: black;
-=======
+
     background-color: white;
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
     border-radius: 15px;
 }
 
@@ -312,10 +283,10 @@ display: flex;
 .food-price{
     font-size: 1.2rem;
     margin: 2% 0;
-<<<<<<< HEAD
+
    color: white;
-=======
->>>>>>> 213c9cdd9ae89d26ce3d0bed35198940894132ee
+
+
 }
 .food-detail{
     font-size: 1rem;
