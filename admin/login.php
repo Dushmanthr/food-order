@@ -26,9 +26,9 @@
         ?>
         <br><br>
     <!-- login start from here -->
-    <form action="login.php" method="post" >
+    <form action="" method="post" >
         Username: <br>
-        <input type="text" name="username" placeholder="Enter Username"> <br><br>
+        <input type="text" name="username" placeholder="Enter Username" <br><br>
         <br>
         Password: <br>
         <input type="password" name="password" placeholder="Enter your password"> <br><br>
@@ -47,7 +47,6 @@
 
 
 <?php 
-     session_start();
 
     //include('config.php');
 
@@ -78,12 +77,12 @@
             $_SESSION['login'] = "<div class='success'>Login Successful.</div>";
             $_SESSION['user'] = $username; // to check user log in or not and log will unset it
             // Redirect to home page
-            header('location: ' . SITEURL . 'admin/index.php');
+            header('Location: ' . SITEURL . 'admin/');
         } else {
             // User not available or incorrect credentials
             $_SESSION['login'] = "<div class='error text-center</enter>'>Username or password did not match.</div>";
             // Redirect to home page
-            header('location: ' . SITEURL . 'admin/login.php');
+            header('Location: ' . SITEURL . 'admin/');
         }
 
         // Close the database connection

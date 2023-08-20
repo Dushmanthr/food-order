@@ -1,13 +1,13 @@
-/* 
-    Author: Vijay Thapa;
-    Theme: Restaurant Food Order;
-    version: 1.0;
-*/
-body{
-    background-image: linear-gradient(yellow,orangered);
 
+body{
+<<<<<<< Updated upstream
+    background-image: linear-gradient(rgb(255, 174, 0),aqua);
+=======
+    background-image: linear-gradient(orange,orangered);
+>>>>>>> Stashed changes
     height: 500px;
 }
+
 /* CSS for All */
 *{
     margin: 0 0;
@@ -68,6 +68,12 @@ a:hover{
     color: white;
     background-color: red;
 }
+h1{
+   color: black;
+    font-size: 2rem;
+    margin-bottom: 2%;
+}
+
 h2{
     color: #2f3542;
     font-size: 2rem;
@@ -75,9 +81,6 @@ h2{
 }
 h3{
     font-size: 1.5rem;
-}
-h4{
-    color: white;
 }
 .float-container{
     position: relative;
@@ -97,22 +100,18 @@ fieldset{
 
 /* CSSS for navbar section */
 
-
 .containernavbar{overflow: hidden;
-  overflow: hidden;
-  background-color: orange;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 10%;
-  margin: 0 auto;
-  padding: 1%;
-  z-index: 999;
+        background-color: orange;
+        position: fixed;
+        top: 0;
+        width: 100%;
+     height : 10%;
+    margin: 0 auto;
+    padding: 1%;
 }
 
-
 .logo{
-    width: 10%;
+    width: 6%;
     float: left;
 }
 .menu{
@@ -128,46 +127,53 @@ fieldset{
     font-weight: bold;
 }
 
-
+/* CSS for Food SEarch Section */
 
 .containerbar{
-   width: 80%;
-  margin: 0 auto;
-  padding: 1%;
-  display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+display: flex;
 
 }
-.carousel {
-  position: relative;
+
+
+.containersearch{overflow: hidden;
+ 
+       
+        width: 100%;
+    margin: 0 auto;
+
 }
-
-.carousel .carousel-inner .carousel-item img {
-  width: auto;
-  height: 100vh;
-}
-
-.containersearch{
-  position: absolute;
-  overflow: hidden;
-  z-index: 1;
-  bottom: 50%;
-  width: 100%;
-  margin: auto;
-  padding: 0;
-}
-
-
 .food-search{
+<<<<<<< Updated upstream
+    background-image: url(../images/bg1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+=======
   position: relative;
-  background-image: url(../images/bg1.png);
+  background-image: url(../images/bg3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 30vh;
+  min-height: 50vh;
+}
+
+.food-order{
+  position: relative;
+  background-image: url(../images/bg4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 50vh;
+>>>>>>> Stashed changes
 }
 
 .food-search input[type="search"]{
     width: 50%;
+    position-top:90%;
     padding: 1%;
     font-size: 1rem;
     border: none;
@@ -189,7 +195,7 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: orange;
+    background-color: greenyellow;
     padding: 4% 0;
 }
 .food-menu-box{
@@ -197,7 +203,7 @@ fieldset{
     margin: 1%;
     padding: 2%;
     float: left;
-    background-color: black;
+    background-color: white;
     border-radius: 15px;
 }
 
@@ -215,7 +221,6 @@ fieldset{
 .food-price{
     font-size: 1.2rem;
     margin: 2% 0;
-   color: white;
 }
 .food-detail{
     font-size: 1rem;
