@@ -1,52 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YumEats</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  
-
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-<br><br>
-    <!-- Navbar Section Starts Here -->
-    <section class="navbar ">
-        <div class="containernavbar">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo"  height=40 class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
+<?php
+    include('partials-front/menu.php');
+?>
 
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
@@ -93,29 +47,62 @@
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
 
-            <a href="category-foods.html">
-            <div class="box-3 float-container">
-                <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
+            <?php
+              //create sql query to display categories from database
+              $sql = "SELECT * from tbl_category  WHERE active='Yes' AND featured = 'Yes' LIMIT 3";
 
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-            </a>
+              //Execute the query
+              $res = mysqli_query($conn,$sql);
+                // count rows to check wheather the category is available or not
+              $count = mysqli_num_rows($res);
 
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
+              if($count>0){
+                  //category available
+                  while($row = mysqli_fetch_assoc($res)){
+                      //get the values like id,title,image name
 
-                <h3 class="float-text text-white">Pizza</h3>
-            </div>
-            </a>
+                      $id = $row['id'];
+                      $title = $row['title'];
+                      $image_name = $row['image_name'];
+                      ?>
+                             <a href="category-foods.html">
+                                    <div class="box-3 float-container">
 
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/Kottu.jpg" alt="Kottu" class="img-responsive img-curve">
+                                    <?php
+                                    //check wheather the image is avaialble or not
+                                        if($image_name==""){
+                                            //display msg
+                                            echo "<div class = 'error'>Imahe not available</div>";
+                                        }
+                                        else{
+                                            //image available
+                                            ?>
+                                                <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name; ?>" alt="Burger" class="img-responsive img-curve">
+                                            <?php
+                                        }
+                                    
+                                    ?>
+                                        
 
-                <h3 class="float-text text-white">Kottu</h3>
-            </div>
-            </a>
+                                        <h3 class="float-text text-white"><?php echo $title;?></h3>
+                                    </div>
+                            </a>
+                      <?php
+                  }
+              }
+              else{
+                  //category is not available
+
+                  echo "<div class = 'error'>Category not added</div>";
+              }
+            
+            ?>
+
+           
+
+         
+
+          
 
             <div class="clearfix"></div>
         </div>
@@ -127,16 +114,55 @@
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
 
+            <?php
+                //getting foods from database that are active and featured
+                //sql query
+                $sql2 ="SELECT * FROM tbl_food WHERE active ='yes' AND featured = 'Yes' LIMIT 6";
+
+                //Execute the query
+                $res2 = mysqli_query($conn,$sql);
+
+                //count rows
+                $count2 = mysqli_num_rows($res2);
+
+                //check wheather food available or not
+                if($count2>0){
+                    //food available
+                  while($row = mysqli_fetch_assoc($res2)){
+                    //get the values like id,title,image name
+
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $price = $row['price'];
+                    $description = $row['description'];
+                    $image_name = $row['image_name'];
+                    ?>
+
             <div class="food-menu-box">
                 <div class="food-menu-img">
+
+                    <?php
+                        //check wheather the image available or not
+                        if($image_name ==""){
+                            //image not available
+                            echo "<div class = 'error'>Image not found!</div>";
+                        }
+                        else{
+                            //Image available
+                            ?>
+                                <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain burger" class="img-responsive img-curve">
+                            <?php
+                        }
+
+                    ?>
                     <img src="images/burger.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
                 </div>
 
                 <div class="food-menu-desc">
-                    <h4>Chicken Burger</h4>
-                    <p class="food-price">$1.99</p>
+                    <h4><?php echo $title;?></h4>
+                    <p class="food-price"><?php echo $price;?></p>
                     <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
+                                <?php echo $description;?>
                     </p>
                     <br>
 
@@ -144,91 +170,18 @@
                 </div>
             </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-burger.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
-                </div>
+                    <?php
+                  }
+                }
+                else{
+                    //food not available
+                    echo "<div class = 'error'>Food not available!</div>";
+                }
 
-                <div class="food-menu-desc">
-                    <h4>Smoky Burger</h4>
-                    <p class="food-price">$1.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce and organice vegetables.
-                    </p>
-                    <br>
+            ?>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/pizza.jpg" alt="pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Italian Pizza</h4>
-                    <p class="food-price">$2.99</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Hawain Pizza</h4>
-                    <p class="food-price">$2.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Kottu.jpg" alt="Chicke Hawain Kottu" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Kottu
-                    </h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/rice.jpg" alt="Chicke Hawain rice" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Rice</h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+           
+            
 
 
             <div class="clearfix"></div>
@@ -243,31 +196,6 @@
     </section>
     <!-- fOOD Menu Section Ends Here -->
 
-    <!-- social Section Starts Here -->
-    <section class="social">
-        <div class="container text-center">
-            <ul>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/>https://www.facebook.com/YumYumEats/</a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/> https://www.instagram.com/YumYumEats/ </a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/>https://twitter.com/YumYumEats/</a>
-                </li>
-            </ul>
-        </div>
-    </section
-    <!-- social Section Ends Here -->
-
-    <!-- footer Section Starts Here -->
-    <section class="footer ">
-        <div class="container text-center">
-            <p>All rights reserved.</p>
-        </div>
-    </section>
-    <!-- footer Section Ends Here -->
-
-</body>
-</html>
+    <?php
+    include('partials-front/footer.php');
+?>

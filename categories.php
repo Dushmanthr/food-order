@@ -1,46 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Important to make website responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
-
-    <!-- Link our CSS file -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <!-- Navbar Section Starts Here -->
-    <section class="navbar">
-        <div class="containernavbar">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
-
-            <div class="menu text-right">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="categories.html">Categories</a>
-                    </li>
-                    <li>
-                        <a href="foods.html">Foods</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </section>
-    <!-- Navbar Section Ends Here -->
+<?php
+    include('partials-front/menu.php');
+?>
 <br><br><br>
 
 
@@ -49,76 +9,57 @@
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
 
-            <a href="category-foods.html">
-            <div class="box-3 float-container">
-                <img src="images/pizza.jpg" alt="Pizza" class="img-responsive img-curve">
+            <?php
+                //display all the categories that are active
+                //sql query
+                $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
 
-                <h3 class="float-text text-white">Pizza</h3>
-            </div>
-            </a>
+                //execute the query
+                $res = mysqli_query($conn,$sql);
+                  // count rows to check wheather the category is available or not
+              $count = mysqli_num_rows($res);
 
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/burger.jpg" alt="Burger" class="img-responsive img-curve">
+              //check wheather categories available or not
+              if($count>0){
+                  //categories available
+                  while($row = mysqli_fetch_assoc($res)){
+                    //get the values like id,title,image name
 
-                <h3 class="float-text text-white">Burger</h3>
-            </div>
-            </a>
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $image_name = $row['image_name'];
+                    ?>
+                            <a href="category-foods.html">
+                                <div class="box-3 float-container">
 
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/ePizza.jpg" alt="pizza" class="img-responsive img-curve">
+                                <?php
+                                    if($image_name==""){
+                                        //image not available
+                                        echo "<div class = 'error'>Image not found!</div>";
+                                    }
+                                    else{
+                                        //image available
+                                        ?>
+                                             <img src="<?php echo SITEURL;?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
+                                        <?php
+                                    }
+                                ?>
+                                   
 
-                <h3 class="float-text text-white">Cheese Pizza</h3>
-            </div>
-            </a>
+                                    <h3 class="float-text text-white"><?php echo $title; ?></h3>
+                                </div>
+                            </a>
+                    <?php
+                  }
+              }
+              else{
+                  //categories not available
+                  echo "<div class = 'error'>Category not found!</div>";
+              }
+            ?>
 
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/vkottu.jpg" alt="Kottu" class="img-responsive img-curve">
+            
 
-                <h3 class="float-text text-white">Vegitable Kottu</h3>
-            </div>
-            </a>
-
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/eKottu.jpg" alt="Kottu" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Egg Kottu</h3>
-            </div>
-            </a>
-
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/Kottu.jpg" alt="Kottu" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Chicken Kottu</h3>
-            </div>
-            </a>
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/VegetableRice.jpg" alt="rice" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Vegitable Rice</h3>
-            </div>
-            </a>
-
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/EggRice.png" alt="rice" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Egg Rice</h3>
-            </div>
-            </a>
-
-            <a href="#">
-            <div class="box-3 float-container">
-                <img src="images/rice.jpg" alt="rice" class="img-responsive img-curve">
-
-                <h3 class="float-text text-white">Chicken Rice</h3>
-            </div>
-            </a>
 
             
 
@@ -128,31 +69,6 @@
     <!-- Categories Section Ends Here -->
 
 
-    <!-- social Section Starts Here -->
-    <section class="social">
-        <div class="container text-center">
-            <ul>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
-                </li>
-                <li>
-                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- social Section Ends Here -->
-
-    <!-- footer Section Starts Here -->
-    <section class="footer">
-        <div class="container text-center">
-            <p>All rights reserved. </p>
-        </div>
-    </section>
-    <!-- footer Section Ends Here -->
-
-</body>
-</html>
+    <?php
+    include('partials-front/footer.php');
+?>
