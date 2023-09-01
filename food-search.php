@@ -1,5 +1,6 @@
 <?php include('partials-front/menu.php');  ?>
 
+
 <br><br><br>
 <br><br>
 
@@ -22,108 +23,77 @@
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/burger.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
-                </div>
+            <?php 
+                //get the search keyword
+                $search = $_POST['search'];
 
-                <div class="food-menu-desc">
-                    <h4>Chicken Burger</h4>
-                    <p class="food-price">$1.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
+                //sql query to get for based on search keyword
+                $sql = "SELECT * FROM tbl_food WHERE title Like '%$search%' OR description LIKE '%$search%'";
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                //execute trhe queryy
+                $res = mysqli_query($conn,$sql);
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-burger.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
-                </div>
+                //count rows
+                $count = mysqli_num_rows($res);
 
-                <div class="food-menu-desc">
-                    <h4>Smoky Burger</h4>
-                    <p class="food-price">$1.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce and organice vegetables.
-                    </p>
-                    <br>
+                //check wheather food avaialble or not
+                if($count>0){
+                    //food available
+                    while($row=mysqli_fetch_assoc($res)){
+                        //get the values
+                        $id = $row['id'];
+                        $title = $row['title'];
+                        $price = $row['price'];
+                        $description = $row['description'];
+                        $image_name = $row['image_name'];
+                        ?>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                    <div class="food-menu-box">
+                        <div class="food-menu-img">
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/pizza.jpg" alt="pizza" class="img-responsive img-curve">
-                </div>
+                        <?php
+                                    //check wheather the image available or not
+                                    if($image_name==""){
+                                        //image not available
+                                        echo "<div class='error'>Image not available</div>";
+                                    }
+                                    else{
+                                        //image available
+                                        ?>
+                                            <img src="<?php echo SITEURL;?>images/food/<?php echo $image_name;?>" alt="Chicke Hawain burger" class="img-responsive img-curve">
+                                        <?php
+                                    }
+                                ?>
+                            
+                        </div>
 
-                <div class="food-menu-desc">
-                    <h4>Italian Pizza</h4>
-                    <p class="food-price">$2.99</p>
-                    <p class="food-detail">
-                        Made with Italian Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
+                        <div class="food-menu-desc">
+                            <h4><?php echo $title;?></h4>
+                            <p class="food-price"><?php echo $price;?></p>
+                            <p class="food-detail">
+                                <!-- Made with tomato Sauce, Chicken, and organice vegetables. -->
+                                <?php
+                                    echo $description;
+                                ?>
+                            </p>
+                            <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
+                            <a href="order.html" class="btn btn-primary">Order Now</a>
+                        </div>
+                            </div>
 
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                </div>
+                        <?php
+                }
+                }
+                else{
+                    //food not avaialble
+                    echo "<div class='error'>Food not found</div>";
+                }
+            
+            ?>
 
-                <div class="food-menu-desc">
-                    <h4>Hawain Pizza</h4>
-                    <p class="food-price">$2.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
+           
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/Kottu.jpg" alt="Chicke Hawain Kottu" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Kottu
-                    </h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
-
-            <div class="food-menu-box">
-                <div class="food-menu-img">
-                    <img src="images/rice.jpg" alt="Chicke Hawain rice" class="img-responsive img-curve">
-                </div>
-
-                <div class="food-menu-desc">
-                    <h4>Chicken Rice</h4>
-                    <p class="food-price">$3.99</p>
-                    <p class="food-detail">
-                        Made with tomato Sauce, Chicken, and organice vegetables.
-                    </p>
-                    <br>
-
-                    <a href="#" class="btn btn-primary">Order Now</a>
-                </div>
-            </div>
 
 
 

@@ -50,7 +50,6 @@
         </div>
     </section>
     <!-- Navbar Section Ends Here -->
-
 <?php
     //check wheather food id is set or not
     if(isset($_GET['food_id'])){
@@ -58,7 +57,7 @@
         $food_id = $_GET['food_id'];
 
         //get the details of selected food
-        $sql = "SELECT * FROM  tbl_food WHERE id=$food_id";
+        $sql = "SELECT * FROM  tbl_food WHERE id =$food_id";
         //execute the query
         $res = mysqli_query($conn,$sql);
         //count the rows
@@ -78,32 +77,35 @@
                 //food not available
                 //redirect to the homepage
                 header('location:'. SITEURL);
+                die();
         }
 
     }
     else{
         //redirect to homepage
         header('location:'. SITEURL);
+        die();
     }
 ?>
 
 <br><br><br>
 
+
     <!-- fOOD sEARCH Section Starts Here -->
-    <section class="food-search">
+    <section class="food-order">
         <div class="container">
             
             <h2 class="text-center text-black">Fill this form to confirm your order.</h2>
 
-            <form action="" method = "POST" class="order">
-                <fieldset>
+            <form action="<?php $self ?>" method = "POST" class="order">
+            <fieldset>
                     <legend>Selected Food</legend>
 
                     <div class="food-menu-img">
 
                         <?php
                          //check wheather the image available or not
-                        if($image_name==""){
+                        if($image_name = ""){
                             //image not available
                             echo "<div class ='error'>Image is not available</div>";
                         }
@@ -124,7 +126,7 @@
                         <h3><?php echo $title;?></h3>
                         <input type="hidden" name="food" value = "<?php echo $title;?>"
 
-                        <p class="food-price">Rs.<?php echo $price ?></p>
+                        <p class="food-price"><?php echo $price ?></p>
                         <input type="hidden" name="price" value = "<?php echo $price;?>"
 
                         <div class="order-label">Quantity</div>
@@ -154,16 +156,17 @@
             </form>
 
             <?php
+            ob_start();
                     //check wheather submit button clicked or not
                     if(isset($_POST['submit'])){
                         //get all the details from the form
-                        $food = $_POST['food'];
+                        $food = $_POST['submit'];
                         $price = $_POST['price'];
                         $qty = $_POST['qty'];
 
                         $total = $price *$qty; //total =price*qty
 
-                        $order_date = date("Y-m-d h:i:sa");//order date
+                        $order_date = date("Y-m-d h:1:");//order date
 
                         $status = "Ordered";
 
@@ -186,28 +189,51 @@
                             customer_email = '$customer_email',
                             customer_address = '$customer_address'
                         ";
-
-                        //echo $sql2; die();
                         //execute the query
                         $res2 = mysqli_query($conn,$sql2);
 
                         //check whether the query executed successfully o not
                         if($res2==true){
                             //query executed and order saved
-                            $_SESSION['order'] = "<div class='success text-center'>Food orderd successfully</div>";
-                            header('location:'.SITEURL);
+                            $_SESSION['order'] = "<div class='success'>Food orderd successfully</div>";
+
+                             
                         }
                         else{
                             //failed to save order
-                            $_SESSION['order'] = "<div class = 'error text-center'>Failed to order food</div>";
-                            header('location:'.SITEURL);
+                            $_SESSION['order'] = "<div class='error'>Failed to order food</div>";
+
+                            
                         }
+                        header('location:http://localhost/food_order');
+
 
                     }
+                    ob_end_flush();
             ?>
 
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
-    <?php include('partials-front/footer.php');  ?>
+    <!-- social Section Starts Here -->
+    <!-- <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </section> -->
+    <!-- social Section Ends Here -->
+
+
+</body>
+</html>

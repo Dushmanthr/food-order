@@ -32,7 +32,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<form action="food-search.html" method="POST">
+<form action="<?php echo SITEURL;?>food-search.php" method="POST">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
@@ -41,6 +41,14 @@
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
+
+    <?php
+    if(isset($_SESSION['order'])){
+        echo $_SESSION['order'];
+        unset ($_SESSION['order']);
+    }
+    
+    ?>
 
     <!-- CAtegories Section Starts Here -->
     <section class="categories">
@@ -64,15 +72,16 @@
                       $id = $row['id'];
                       $title = $row['title'];
                       $image_name = $row['image_name'];
+                     
                       ?>
-                             <a href="category-foods.html">
+                             <a href="<?php echo SITEURL;?>category-foods.php?category_id=<?php echo $id;?>">
                                     <div class="box-3 float-container">
 
                                     <?php
                                     //check wheather the image is avaialble or not
                                         if($image_name==""){
                                             //display msg
-                                            echo "<div class = 'error'>Imahe not available</div>";
+                                            echo "<div class = 'error'>Image not available</div>";
                                         }
                                         else{
                                             //image available
@@ -117,10 +126,10 @@
             <?php
                 //getting foods from database that are active and featured
                 //sql query
-                $sql2 ="SELECT * FROM tbl_food WHERE active ='yes' AND featured = 'Yes' LIMIT 6";
+                $sql2 ="SELECT id,title,price,description,image_name FROM tbl_food WHERE active ='yes' AND featured = 'Yes' ";
 
                 //Execute the query
-                $res2 = mysqli_query($conn,$sql);
+                $res2 = mysqli_query($conn,$sql2);
 
                 //count rows
                 $count2 = mysqli_num_rows($res2);
@@ -155,7 +164,7 @@
                         }
 
                     ?>
-                    <img src="images/burger.jpg" alt="Chicke Hawain burger" class="img-responsive img-curve">
+                    
                 </div>
 
                 <div class="food-menu-desc">
@@ -166,7 +175,7 @@
                     </p>
                     <br>
 
-                    <a href="order.html" class="btn btn-primary">Order Now</a>
+                    <a href="<?php echo SITEURL;?>order.php?food_id=<?php echo $id;?>" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
 
