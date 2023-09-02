@@ -1,7 +1,7 @@
 
 body{
-    background-image: linear-gradient(orange,orangered);
-    height: 500px;
+    background-image:linear-gradient(white,white);
+   /*  height: 500px; */
 }
 
 /* CSS for All */
@@ -27,6 +27,7 @@ body{
 }
 .text-center{
     text-align: center;
+  
 }
 .text-left{
     text-align: left;
@@ -41,11 +42,11 @@ body{
 }
 
 a{
-    color: #110103;
+    color: white;
     text-decoration: none;
 }
 a:hover{
-    color: orangered;
+    color: #c9c47c;
 }
 
 .btn{
@@ -55,19 +56,20 @@ a:hover{
     border-radius: 5px;
 }
 .btn-primary{
-    background-color: #000000;
-    color: white;
+    background-color: #c9c47c;
+    color: black;
     cursor: pointer;
 }
 
 .btn-primary:hover{
     color: white;
-    background-color: red;
+    background-color:#AC7118;
 }
 h2{
     color: #2f3542;
     font-size: 2rem;
     margin-bottom: 2%;
+    text-align: center;
 }
 h3{
     font-size: 1.5rem;
@@ -104,7 +106,7 @@ fieldset{
 
 .containernavbar{overflow: hidden;
   overflow: hidden;
-  background-color: orange;
+  background-color: #AC7118;
   position: fixed;
   top: 0;
   width: 100%;
@@ -112,6 +114,7 @@ fieldset{
   margin: 0 auto;
   padding: 1%;
   z-index: 999;
+  
 }
 
 .logo{
@@ -120,6 +123,7 @@ fieldset{
 }
 .menu{
     line-height: 60px;
+    
 }
 .menu ul{
     list-style-type: none;
@@ -129,6 +133,7 @@ fieldset{
     display: inline;
     padding: 1%;
     font-weight: bold;
+    color:white;
 }
 
 /* CSS for Food SEarch Section */
@@ -161,7 +166,7 @@ fieldset{
 
 .food-search{
   position: relative;
-  background-image: url(../images/bg1.png);
+  background-image: url(../images/bg3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -191,8 +196,9 @@ fieldset{
 
 /* CSS for Food Menu */
 .food-menu{
-    background-color: orange;
+    background-color: #c9c47c;
     padding: 4% 0;
+    padding-left: 10%;
 }
 .food-menu-box{
     width: 43%;
@@ -236,6 +242,7 @@ body, h1, h2, h3, p, ul, li {
 .social {
     text-align: center; /* Center-align the content */
     padding: 20px 0;
+    color:black;
 }
 
 .social ul {
@@ -252,7 +259,12 @@ body, h1, h2, h3, p, ul, li {
     text-decoration: none;
     display: flex;
     align-items: center;
+    color:black;
 }
+.social li a:hover{
+    color: #c9c47c;
+}
+
 
 .social li img {
     width: 30px;
