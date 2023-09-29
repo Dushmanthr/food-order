@@ -8,6 +8,15 @@
 
     </head>
     <body>
+    <style>
+body {
+  background-image: url('../images/bg5.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
         <div class="login" >
         <h1 class="text-center">Login</h1>
 
@@ -26,19 +35,22 @@
         ?>
         <br><br>
     <!-- login start from here -->
-    <form action="login.php" method="post" >
-        Username: <br>
+    <center>
+    <form class="form" action="login.php" method="post" >
+        Username: 
         <input type="text" name="username" placeholder="Enter Username"> <br><br>
         <br>
-        Password: <br>
+        Password: 
         <input type="password" name="password" placeholder="Enter your password"> <br><br>
         
-        Submit: <br>
-        <input type="submit" name="submit" value="login" class="btn-primary">
+        
+        <input style = "border-radius:20px; width:60px;" type="submit" name="submit" value="login" class="btn-primary">
+        <input style = "border-radius:20px;  width:60px;" type="submit" name="submit" value="cancel" class="btn-primary">
     </form> <br>
+    </center>
     <!-- login end from here -->
-        <p class="text-">created by - <a href="www.google.com">yuwantha</a> </p>
-        </div>
+       <!--  <p class="text-">created by - <a href="www.google.com">yuwantha</a> </p>
+        </div> -->
 
         
     </body>
@@ -47,7 +59,7 @@
 
 
 <?php 
-     session_start();
+     /* session_start(); */
 
     //include('config.php');
 

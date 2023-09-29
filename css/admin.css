@@ -4,6 +4,7 @@
   version: 1.0;
 */
 
+
 *{
     margin: 0;
     padding: 0;
@@ -48,7 +49,8 @@ table tr td{
 }
 
 .btn-primary{
-    background-color: #1e90ff;
+    background-color: #c9c47c;;
+    border-radius: 2px;
     padding: 1%;
     color: white;
     text-decoration: none;
@@ -56,7 +58,7 @@ table tr td{
 }
 
 .btn-primary:hover{
-    background-color: #3742fa;
+    background-color: #AC7118;;
 }
 
 .btn-secondary{
@@ -145,11 +147,13 @@ table tr td{
 /*login*/
 .login {
     width: 30%;
+   
     border: solid rgb(13, 14, 13);
     text-align:justify;
     margin: 5% auto;
     padding: 2%;
 
 }
+
 
 
